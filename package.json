@@ -1,0 +1,31 @@
+{
+	"name": "com.revolsys.esri.filegdb",
+	"version": "1.5.1",
+	"description": "ESRI File Geodatabase API wrappers",
+	"main": "gulpfile.js",
+	"dependencies": {},
+	"devDependencies": {
+		"fs-extra": "^7.0.0",
+		"gulp": "^3.9.0",
+		"gulp-decompress": "^2.0.2",
+		"gulp-download": "0.0.1",
+		"gulp-rename": "^1.3.0",
+		"gulp-run-command": "0.0.9",
+		"gulp-sequence": "^1.0.0",
+		"gulp-unzip": "^1.0.0",
+		"replace-in-file": "^3.4.2"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/revolsys/com.revolsys.esri.filegdb-jni.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/revolsys/com.revolsys.esri.filegdb-jni/issues"
+	},
+	"homepage": "https://github.com/revolsys/com.revolsys.esri.filegdb-jni#readme"
+}

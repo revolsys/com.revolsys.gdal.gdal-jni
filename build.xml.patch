@@ -1,0 +1,13 @@
+diff --git a/swig/java/build.xml b/swig/java/build.xml
+index cb117e8..2c0fba5 100644
+--- a/swig/java/build.xml
++++ b/swig/java/build.xml
+@@ -41,7 +41,7 @@
+ 		<echo>compilation of tests complete</echo>
+ 	</target>
+         
+-        <target name="all" depends="compile_tests" description="Build a jar and test apps.">
++        <target name="all" description="Build a jar and test apps.">
+         </target>
+ 
+         <target name="maven" depends="compile_tests" description="Build maven artifacts">

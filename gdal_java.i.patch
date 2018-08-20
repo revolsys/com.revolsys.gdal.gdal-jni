@@ -1,0 +1,53 @@
+diff --git a/swig/include/java/gdal_java.i b/swig/include/java/gdal_java.i
+index 497cb57..cde3235 100644
+--- a/swig/include/java/gdal_java.i
++++ b/swig/include/java/gdal_java.i
+@@ -14,19 +14,26 @@
+   private static boolean available = false;
+ 
+   static {
++    Architecture arch = NativeLibraryUtil.getArchitecture();
+     try {
+-      System.loadLibrary("gdalalljni");
+-      available = true;
++      if (
++        arch == Architecture.LINUX_64 ||
++        arch == Architecture.OSX_64 ||
++        arch == Architecture.WINDOWS_64
++      ) {
++        NativeLoader.loadLibrary("gdalalljni");
++        available = true;
+ 
+-      if (gdal.HasThreadSupport() == 0)
+-      {
+-        System.err.println("WARNING : GDAL should be compiled with thread support for safe execution in Java.");
++        if (gdal.HasThreadSupport() == 0) {
++          System.err.println("WARNING : GDAL should be compiled with thread support for safe execution in Java.");
++        }
++      } else {
++        System.err.println("GDAL JNI not supported for Architecture: " + arch);
+       }
+-
+-    } catch (UnsatisfiedLinkError e) {
++    } catch (Exception e) {
+       available = false;
+-      System.err.println("Native library load failed.");
+-      System.err.println(e);
++      System.err.println("Error loading GDAL JNI for Architecture: " + arch);
++      e.printStackTrace();
+     }
+   }
+ 
+@@ -37,6 +44,12 @@
+ 
+ /* This hacks turns the gdalJNI class into a package private class */
+ %pragma(java) jniclassimports=%{
++import java.lang.Exception;
++
++import org.scijava.nativelib.NativeLibraryUtil;
++import org.scijava.nativelib.NativeLibraryUtil.Architecture;
++import org.scijava.nativelib.NativeLoader;
++
+ import org.gdal.osr.SpatialReference;
+ import org.gdal.ogr.Geometry;
+ import org.gdal.ogr.StyleTable;
