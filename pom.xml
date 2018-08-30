@@ -150,6 +150,7 @@
           <descriptors>
             <descriptor>src/main/assembly/linux_64.xml</descriptor>
             <descriptor>src/main/assembly/osx_64.xml</descriptor>
+            <descriptor>src/main/assembly/windows_64.xml</descriptor>
           </descriptors>
         </configuration>
       </plugin>
