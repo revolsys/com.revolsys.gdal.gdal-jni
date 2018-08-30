@@ -73,9 +73,9 @@ gulp.task('copyJava', ()=> {
 gulp.task('downloadWindows', function() {
   return download(gdalWindowsUrl)
     .pipe(unzip())
-    .pipe(gulp.dest('.'));
+    .pipe(gulp.dest('gdal-win/'));
 });
 
 gulp.task('copyWindows', ()=> {
-  fs.copySync(`$windowsDir/bin/gdal/java/gdalalljni.dll`, 'target/')
+  fs.copySync('gdal-win/bin/gdal/java/gdalalljni.dll', 'target/')
 });
