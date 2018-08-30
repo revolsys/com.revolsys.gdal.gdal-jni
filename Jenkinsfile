@@ -47,7 +47,7 @@ gulp download
   
   stage ('Native Library Build') {
 
-    stash includes: 'source', excludes: 'source/node_modules', name: 'source';
+    stash includes: 'source/**', excludes: 'source/node_modules', name: 'source';
 
     node ('macosx') {
 
