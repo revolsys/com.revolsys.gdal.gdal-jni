@@ -1,0 +1,23 @@
+<assembly
+  xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+    http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.1
+    http://maven.apache.org/xsd/assembly-1.1.1.xsd
+  ">
+  <id>osx_64</id>
+  <formats>
+    <format>jar</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  
+  <fileSets>
+    <fileSet>
+      <directory>gdal-src/swig/java/</directory>
+      <outputDirectory>natives/osx_64</outputDirectory>
+      <includes>
+        <include>libgdalalljni.dylib</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</assembly>

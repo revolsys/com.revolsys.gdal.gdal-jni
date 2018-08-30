@@ -66,15 +66,4 @@ gulp.task('swigOSX', run('make -j4 JAVA_HOME=/Library/Java/JavaVirtualMachines/j
 
 gulp.task('copyJava', ()=> {
   fs.copySync('gdal-src/swig/java/org/', 'target/java/org/')
-    for (var os of [
-    'linux_64',
-    'osx_64',
-    'windows_64'
-  ]) {
-    const osDir = `target/classes/natives/${os}/`
-    if(!fs.existsSync(osDir)) {
-      fs.mkdirsSync(osDir)
-    }
-  }
-  fs.copySync('gdal-src/swig/java/libgdalalljni.dylib', 'target/classes/natives/osx_64/libgdalalljni.dylib')
 });
