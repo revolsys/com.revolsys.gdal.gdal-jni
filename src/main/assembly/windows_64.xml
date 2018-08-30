@@ -13,10 +13,10 @@
   
   <fileSets>
     <fileSet>
-      <directory>gdal-src/swig/java/</directory>
+      <directory>target</directory>
       <outputDirectory>natives/windows_64</outputDirectory>
       <includes>
-        <include>libgdalalljni.dll</include>
+        <include>gdalalljni.dll</include>
       </includes>
     </fileSet>
   </fileSets>

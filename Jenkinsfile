@@ -66,23 +66,6 @@ gulp swigOSX
       stash includes: 'source/gdal-src/swig/java/libgdalalljni.dylib', name: 'osxLib';
     }
     unstash 'osxLib'
- 
- /*   node ('windows') {
-      dir ('source') {
-        deleteDir()
-      }
-
-      env.PATH = env.PATH + ";c:\\Windows\\System32"
-      unstash 'shared';
-      unstash 'windows';
-      dir ('source') {
-        bat 'build-winnt.bat'
-      }
-      stash includes: '''
-        source/target/classes/natives/windows_64/*.dll
-      ''', name: 'windowsLib';
-    }
-    unstash 'windowsLib'*/
 
     dir ('source') {
       sh '''
@@ -90,20 +73,22 @@ gulp configure
 gulp make
 gulp swigLinux
 gulp copyJava
+gulp downloadWindows
+gulp copyWindows
       '''
     }
-  
-    stage('build') {
-      dir ('source') {
-        mavenRuntime.run pom: 'pom.xml', goals: 'install', buildInfo: buildInfo
-      }
+  }
+
+  stage('build') {
+    dir ('source') {
+      mavenRuntime.run pom: 'pom.xml', goals: 'install', buildInfo: buildInfo
     }
-    
-    stage('deploy') {
-      dir ('source') {
-        mavenRuntime.deployer.deployArtifacts buildInfo
-        artifactoryServer.publishBuildInfo buildInfo
-      }
+  }
+
+  stage('deploy') {
+    dir ('source') {
+      mavenRuntime.deployer.deployArtifacts buildInfo
+      artifactoryServer.publishBuildInfo buildInfo
     }
   }
 }

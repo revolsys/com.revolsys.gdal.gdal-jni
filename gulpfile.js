@@ -11,6 +11,8 @@ const replace = require('replace-in-file');
 const version = '2.3.1';
 const gdalDir = `gdal-${version}/`;
 const gdalSrcUrl = `https://download.osgeo.org/gdal/${version}/gdal-${version}.tar.gz`;
+const windowsDir = `release-1911-x64-gdal-2-3-1-mapserver-7-2-0`;
+const gdalWindowsUrl = `http://download.gisinternals.com/sdk/downloads/${windowsDir}.zip`;
 
 gulp.task('deleteSource', function(done) {
   fs.removeSync('gdal-src');
@@ -66,4 +68,14 @@ gulp.task('swigOSX', run('make -j4 JAVA_HOME=/Library/Java/JavaVirtualMachines/j
 
 gulp.task('copyJava', ()=> {
   fs.copySync('gdal-src/swig/java/org/', 'target/java/org/')
+});
+
+gulp.task('downloadWindows', function() {
+  return download(gdalWindowsUrl)
+    .pipe(unzip())
+    .pipe(gulp.dest('.'));
+});
+
+gulp.task('copyWindows', ()=> {
+  fs.copySync(`$windowsDir/bin/gdal/java/gdalalljni.dll', 'target/')
 });
