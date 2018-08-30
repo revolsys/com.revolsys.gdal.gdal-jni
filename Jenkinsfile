@@ -41,6 +41,7 @@ git config --global user.name "Paul Austin"
       sh '''
 npm install
 gulp download
+gulp patch
       '''
     }
   }
@@ -57,8 +58,9 @@ gulp download
       dir ('source') {
         sh '''
 npm install
+gulp configure
 gulp make
-gulp makeSwig
+gulp swigOSX
       '''
       }
       stash includes: 'source/gdal-src/swig/java/libgdalalljni.dylib', name: 'osxLib';
@@ -84,6 +86,7 @@ gulp makeSwig
 
     dir ('source') {
       sh '''
+gulp configure
 gulp make
 gulp swig
 gulp copyJava
