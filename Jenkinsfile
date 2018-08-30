@@ -88,7 +88,7 @@ gulp swigOSX
       sh '''
 gulp configure
 gulp make
-gulp swig
+gulp swigLinux
 gulp copyJava
       '''
     }

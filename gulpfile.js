@@ -57,6 +57,9 @@ gulp.task('make', run('make -j4', {
 gulp.task('swig', run('make -j4', {
   cwd: 'gdal-src/swig/java'
 }));
+gulp.task('swigLinux', run('make -j4 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 "JAVA_INCLUDE=-I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/darwin"', {
+  cwd: 'gdal-src/swig/java'
+}));
 gulp.task('swigOSX', run('make -j4 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/ "JAVA_INCLUDE=-I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/darwin"', {
   cwd: 'gdal-src/swig/java'
 }));
