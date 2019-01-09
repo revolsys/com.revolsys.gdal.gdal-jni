@@ -12,7 +12,7 @@ It requires the main GDAL shared library to be in the path.
 <dependency>
   <groupId>com.revolsys.gdal</groupId>
   <artifactId>gdal-jni</artifactId>
-  <version>2.3.1-1</version>
+  <version>2.4.0</version>
 </dependency>
 ```
 

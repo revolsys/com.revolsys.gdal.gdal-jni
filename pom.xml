@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.revolsys.gdal</groupId>
   <artifactId>gdal-jni</artifactId>
-  <version>2.3.1-1</version>
+  <version>2.4.0</version>
   <description>GDAL JNI</description>
   <inceptionYear>2018</inceptionYear>
   <organization>
@@ -56,12 +56,9 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <release>11</release>>
           <debug>true</debug>
           <parameters>true</parameters>
-          <compilerArgument>-parameters</compilerArgument>
-          <testCompilerArgument>-parameters</testCompilerArgument>
         </configuration>
       </plugin>
 

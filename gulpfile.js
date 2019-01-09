@@ -8,10 +8,10 @@ var gulpSequence = require('gulp-sequence')
 var fs = require('fs-extra')
 const replace = require('replace-in-file');
 
-const version = '2.3.1';
+const version = '2.4.0';
 const gdalDir = `gdal-${version}/`;
 const gdalSrcUrl = `https://download.osgeo.org/gdal/${version}/gdal-${version}.tar.gz`;
-const windowsDir = `release-1911-x64-gdal-2-3-1-mapserver-7-2-0`;
+const windowsDir = `release-1911-x64-gdal-2-4-mapserver-7-2-1`;
 const gdalWindowsUrl = `http://download.gisinternals.com/sdk/downloads/${windowsDir}.zip`;
 
 gulp.task('deleteSource', function(done) {

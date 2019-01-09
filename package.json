@@ -1,7 +1,7 @@
 {
-	"name": "com.revolsys.esri.filegdb",
+	"name": "com.revolsys.gdal.gdal-jni",
 	"version": "1.5.1",
-	"description": "ESRI File Geodatabase API wrappers",
+	"description": "GDAL API JNI wrappers",
 	"main": "gulpfile.js",
 	"dependencies": {},
 	"devDependencies": {
@@ -15,17 +15,14 @@
 		"gulp-unzip": "^1.0.0",
 		"replace-in-file": "^3.4.2"
 	},
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/revolsys/com.revolsys.esri.filegdb-jni.git"
+		"url": "git+https://github.com/revolsys/com.revolsys.gdal.gdal-jni.git"
 	},
 	"author": "",
-	"license": "ISC",
+	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/revolsys/com.revolsys.esri.filegdb-jni/issues"
+		"url": "https://github.com/revolsys/com.revolsys.gdal.gdal-jni/issues"
 	},
-	"homepage": "https://github.com/revolsys/com.revolsys.esri.filegdb-jni#readme"
+	"homepage": "https://github.com/revolsys/com.revolsys.gdal.gdal-jni#readme"
 }
